@@ -9,16 +9,20 @@
 * 搜尋餐廳
 ## 開始使用
 1. 需安裝 node.js 與 npm
-2. 將專案 clone 到本地
-3. 透過終端機進入資料夾位置後，輸入：
+2. 開啟終端機建立資料夾或到指定存放位置
+3. 在該資料夾位置，將專案 clone 到本地
+    ```
+    git clone https://github.com/JiangShuuu/resturantList.git
+    ```
+4. 透過終端機進入資料夾位置後，輸入：
     ```
     npm install
     ```
-4. 安裝完成後，繼續輸入：
+5. 安裝完成後，繼續輸入：
     ```
     npm run start
     ```
-5. 終端機顯示此行訊息代表成功運行，打開瀏覽器進入網址：
+6. 終端機顯示此行訊息代表成功運行，打開瀏覽器進入網址：
     ```
     Listening on http://localhost:3000
     ```
