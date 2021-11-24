@@ -26,7 +26,7 @@ app.get("/restaurants/:restaurant_id", (req, res) => {
 
 //search功能
 app.get("/search", (req, res) => {
-  console.log("req.query", req.query);
+  // console.log("req.query", req.query);
   const keyword = req.query.keyword;
   const restaurantSearch = restaurantList.results.filter((restau) => {
     return restau.name.toLowerCase().includes(keyword.toLowerCase());
