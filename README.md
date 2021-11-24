@@ -1,5 +1,5 @@
 # 我的餐廳清單
-![alt text](http://url/to/img.png)
+![alt text](https://github.com/JiangShuuu/resturantList/blob/main/public/image/1637731660278.jpg)
 ## 介紹
 可以瀏覽餐廳、查看詳細資訊、搜尋指定餐廳、連結地圖
 ### 功能
