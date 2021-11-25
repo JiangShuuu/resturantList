@@ -29,7 +29,10 @@ app.get("/search", (req, res) => {
   // console.log("req.query", req.query);
   const keyword = req.query.keyword;
   const restaurantSearch = restaurantList.results.filter((restau) => {
-    return restau.name.toLowerCase().includes(keyword.toLowerCase());
+    return (
+      restau.category.toLowerCase().includes(keyword.toLowerCase()) ||
+      restau.name.toLowerCase().includes(keyword.toLowerCase())
+    );
   });
   res.render("index", { restaurants: restaurantSearch });
 });
