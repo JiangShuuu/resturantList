@@ -4,6 +4,17 @@ const port = 3000;
 const app = express();
 const restaurantList = require("./restaurant.json");
 
+require('dotenv').config()
+const mongoose = require('mongoose')
+mongoose.connect(process.env.MONGODB_URI, { useNewUrlParser: true, useUnifiedTopology: true }) // 設定連線到 mongoDB
+const db = mongoose.connection
+db.on('error', () => {
+  console.log('mongodb error!')
+})
+db.once('open', () => {
+  console.log('mongodb connected!')
+})
+
 app.engine(
   "handlebars",
   engine({ extname: ".handlebars", defaultLayout: "main" })
