@@ -27,11 +27,11 @@
         <div class="input-group">
           <input
             type="text"
-            name="keyword"
+            name="keywords"
             class="form-control"
             placeholder="輸入餐廳、分類"
             aria-label="Restaurant Name..."
-            value=""
+            value="{{keywords}}"
             aria-describedby="search-button"
           />
           <div class="input-group-append">
@@ -50,8 +50,8 @@
   <div class="row">
     <div class="col-md-10 col-12 mx-auto">
       <div class="card-columns">
-        {{#each restaurants}}
-          <a href="/restaurants/{{this.id}}" class="text-secondary">
+        {{#each resData}}
+          <a href="/restaurants/{{this._id}}" class="text-secondary">
             <div class="card mb-3">
               <img
                 class="card-img-top"
