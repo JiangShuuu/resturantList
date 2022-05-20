@@ -6,6 +6,8 @@ const app = express();
 const Restaurant = require ('./models/restaurant')
 const methodOverride = require("method-override")
 
+const routes = require('./routers')
+
 require('dotenv').config()
 const mongoose = require('mongoose')
 mongoose.connect(process.env.MONGODB_URI, { useNewUrlParser: true, useUnifiedTopology: true }) // 設定連線到 mongoDB
@@ -26,13 +28,6 @@ app.use(express.static("public"));
 app.use(methodOverride("_method"))
 app.use(express.urlencoded({ extended: true }))
 
-// index頁面 餐廳data
-app.get("/", (req, res) => {
-  Restaurant.find()
-    .lean()
-    .then( resData => res.render('index', { resData }))
-    .catch(err => console.log(err))
-});
 
 // show頁面 餐廳詳細資料
 app.get("/restaurants/:restaurantId", (req, res) => {
@@ -98,6 +93,8 @@ app.delete("/restaurants/:restaurantId", (req, res) => {
     .then(() => res.redirect("/"))
     .catch(err => console.log(err))
 })
+
+app.use(routes)
 
 app.listen(port, () => {
   console.log(`Express is running on http://localhost:${port}`);
