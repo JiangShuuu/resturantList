@@ -2,6 +2,10 @@ const express = require('express')
 const router = express.Router()
 const Restaurant = require('../../models/restaurant')
 
+router.get('/new', (req, res) => {
+  return res.render('new')
+})
+
 // show頁面 指定餐廳詳細資料
 router.get("/:restaurantId", (req, res) => {
   const { restaurantId } = req.params

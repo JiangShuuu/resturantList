@@ -12,8 +12,12 @@
         />
         {{#if isAuthenticated}}{{ user.name}}的{{/if}}餐廳清單
       </a>
+
     </div>
-    <a href="/users/logout" class="btn btn-outline-info">登出</a>
+    <div class="d-flex align-items-center">
+      <a href="./restaurants/new" class="btn btn-primary mr-3">Create</a>
+      <a href="/users/logout" class="btn btn-outline-info">登出</a>
+    </div>
   </nav>
 
   <div class="banner"></div>
@@ -21,6 +25,7 @@
 
 <!-- search bar -->
 <div class="container search-bar">
+  
   <div class="search-bar-outer">
     <div class="search-bar-inner">
       <form action="/search">
