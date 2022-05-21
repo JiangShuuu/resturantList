@@ -7,8 +7,11 @@ router.get('/login', (req, res) => [
   res.render('login')
 ])
 
-router.post('/login', (req, res) => {
-})
+// 登入驗證
+router.post('/login', passport.authenticate('local', {
+  successRedirect: '/',
+  failureRedirect: '/users/login'
+}))
 
 router.get('/register', (req, res) => {
   res.render('register')
@@ -42,9 +45,10 @@ router.post('/register', (req, res) => {
   .catch(err => console.log(err))
 })
 
-router.post('/login', passport.authenticate('local', {
-  successRedirect: '/',
-  failureRedirect: '/users/login'
-}))
+// 登出
+router.get('/logout', (req, res) => {
+  req.logout()
+  res.redirect('/users/login')
+})
 
 module.exports = router
