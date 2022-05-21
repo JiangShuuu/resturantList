@@ -10,9 +10,10 @@
           class="d-inline-block align-top"
           alt="我的餐廳清單"
         />
-        我的餐廳清單
+        {{#if isAuthenticated}}{{ user.name}}的{{/if}}餐廳清單
       </a>
     </div>
+    <a href="/users/logout" class="btn btn-outline-info">登出</a>
   </nav>
 
   <div class="banner"></div>
