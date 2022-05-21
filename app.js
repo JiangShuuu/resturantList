@@ -8,8 +8,6 @@ const routes = require('./routers')
 const usePassport = require('./config/passport')
 require('./config/mongoose')
 
-
-
 app.engine(
   "handlebars",
   engine({ extname: ".handlebars", defaultLayout: "main" })
